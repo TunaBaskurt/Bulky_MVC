@@ -15,7 +15,7 @@ namespace BulkyWeb.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View();//View folderına gidiyor ve Indexe giriyor
         }
 
         public IActionResult Privacy()
