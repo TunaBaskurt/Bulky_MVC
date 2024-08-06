@@ -1,11 +1,13 @@
 ﻿@page
-@model BulkyWebRazor_Temp.Pages.Categories.CreateModel
+@model BulkyWebRazor_Temp.Pages.Categories.EditModel
 
 
 <form method="post">
+    <input asp-for="Category.Id" hidden />
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2 class=" text-bg-info ">Create Category</h2>
+            <h2 class=" text-bg-info ">Edit Category</h2>
+            <hr />
         </div>
         @*<div asp-validation-summary="ModelOnly"></div>*@
         <div class="mb-3" row p-1>
@@ -21,24 +23,24 @@
 
 
         <div class="row">
-            <div class="col-6">
-                <button type="submit" class="btn btn-dark form-control">Create</button>
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-dark form-control">Update</button>
             </div>
             <div class="col-6">
                 <a asp-page="/Categories/Index" class="btn btn-outline-dark form-control">
-                    Back To List
+                    Back To Lıst
                 </a>
-
             </div>
-          
+
         </div>
     </div>
 
 </form>
 
-@section Scripts{
+@section Scripts {
     @{
-       <partial name="_ValidationScriptsPartial"/>
+        <partial name="_ValidationScriptsPartial" />
     }
 }
+
 
