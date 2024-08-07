@@ -1,7 +1,8 @@
-﻿using BulkyWeb.Models;
+﻿
+using Bulky.Models.Models;
 using Microsoft.EntityFrameworkCore;
 //Veritabanı bağlamını temsil eder ve Entity Framework Core ile veritabanı işlemlerini yönetir.
-namespace BulkyWeb.Data
+namespace Bulky.DataAccess.Data
 {
     public class ApplicationDbContext :DbContext
     {
