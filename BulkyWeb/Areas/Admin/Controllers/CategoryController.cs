@@ -6,8 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Bulky.DataAccess.Repository;
 using Bulky.DataAccess.Repository.IRepository;
 
-namespace BulkyWeb.Controllers
+namespace BulkyWeb.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -36,33 +37,34 @@ namespace BulkyWeb.Controllers
             }
             return View();
         }
-    
 
 
-    public IActionResult Edit(int? id)
-    {
-            if (id==null && id ==0)
+
+        public IActionResult Edit(int? id)
+        {
+            if (id == null && id == 0)
             {
                 return NotFound();
             }
-            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id==id);
-            if (categoryFromDb==null) {
+            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);
+            if (categoryFromDb == null)
+            {
                 return NotFound();
             }
             return View(categoryFromDb);
-    }
-    [HttpPost]
-    public IActionResult Edit(Category obj)
-    {
-
-        if (ModelState.IsValid)
+        }
+        [HttpPost]
+        public IActionResult Edit(Category obj)
         {
+
+            if (ModelState.IsValid)
+            {
                 _unitOfWork.Category.Update(obj);
                 _unitOfWork.Save();
                 return RedirectToAction("Index");
+            }
+            return View();
         }
-        return View();
-    }
         public IActionResult Delete(int? id)
         {
             if (id == null && id == 0)
@@ -76,15 +78,16 @@ namespace BulkyWeb.Controllers
             }
             return View(categoryFromDb);
         }
-        [HttpPost,ActionName("Delete")]
+        [HttpPost, ActionName("Delete")]
         public IActionResult DeletePost(int? id)
         {
-            Category? obj= _unitOfWork.Category.Get(u => u.Id == id);
-            if (obj == null) {
-                return NotFound(); 
+            Category? obj = _unitOfWork.Category.Get(u => u.Id == id);
+            if (obj == null)
+            {
+                return NotFound();
             }
             _unitOfWork.Category.Remove(obj);
-            _unitOfWork.Save ();
+            _unitOfWork.Save();
             return RedirectToAction("Index");
         }
     }
