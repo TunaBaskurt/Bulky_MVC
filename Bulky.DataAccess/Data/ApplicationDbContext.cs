@@ -12,7 +12,7 @@ namespace Bulky.DataAccess.Data
 
         }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Product> Pruducts { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -47,8 +47,7 @@ namespace Bulky.DataAccess.Data
                     ListPrice = 40,
                     Price = 30,
                     Price50 = 25,
-                    Price100 = 20
-                    ,
+                    Price100 = 20,
                     CategoryId = 1,
                     ImageUrl = ""
                 },
