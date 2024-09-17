@@ -1,5 +1,6 @@
 using Bulky.DataAccess.Repository.IRepository;
-using Bulky.Models.Models;
+
+using Bulky.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

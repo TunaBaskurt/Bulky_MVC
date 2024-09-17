@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
-namespace Bulky.Models.Models
+namespace Bulky.Models.ViewModels
 {
     public class Product
     {
         [Key]
         public int Id { get; set; }
-        [Required] 
+        [Required]
         public string Title { get; set; }
         public string Description { get; set; }
 
@@ -25,9 +25,9 @@ namespace Bulky.Models.Models
         public string Author { get; set; }
 
         [Required]
-        [Display(Name ="List Price")]
-        [Range(1,1000)]
-        public double ListPrice {  get; set; }
+        [Display(Name = "List Price")]
+        [Range(1, 1000)]
+        public double ListPrice { get; set; }
 
         [Required]
         [Display(Name = "Price for 1-50")]

@@ -14,7 +14,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectio
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages();//İdentity ekledik
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

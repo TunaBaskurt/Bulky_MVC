@@ -1,5 +1,6 @@
 ﻿
-using Bulky.Models.Models;
+using Bulky.Models;
+using Bulky.Models.ViewModels;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 //Veritabanı bağlamını temsil eder ve Entity Framework Core ile veritabanı işlemlerini yönetir.
@@ -14,6 +15,7 @@ namespace Bulky.DataAccess.Data
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

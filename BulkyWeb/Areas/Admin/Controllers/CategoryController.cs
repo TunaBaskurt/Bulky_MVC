@@ -1,10 +1,10 @@
 ﻿
 using Bulky.DataAccess.Data;
-using Bulky.Models.Models;
 using Microsoft.AspNetCore.Mvc;
 
 using Bulky.DataAccess.Repository;
 using Bulky.DataAccess.Repository.IRepository;
+using Bulky.Models.ViewModels;
 
 namespace BulkyWeb.Areas.Admin.Controllers
 {
